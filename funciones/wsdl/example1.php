@@ -1,7 +1,9 @@
 <?php
 
 
-/*probando desde la  entonces me apraece quetodo esta bienmaquina de gh*/
+/*probando desde la maquina de gh queiro que quere asi
+y me parece que esta qiedando bien 
+*/
 /***************llamado servicio */
 require_once ('clases/consumoApi.class.php');
 /* EJEMPLO PARA EL GET */
