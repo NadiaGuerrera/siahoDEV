@@ -1,7 +1,7 @@
 <?php
 
 
-/*probando desde la maquina de gh queiro que quere asi thanii eduardo martines
+/*probando desde la maquina de gh queiro que quere asi thanii eduardo castro
 y me parece que esta qiedando bien 
 */
 /***************llamado servicio */
