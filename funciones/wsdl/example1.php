@@ -1,9 +1,5 @@
 <?php
 
-
-/*probando desde la maquina de gh queiro que quere asi thanii eduardo castro
-y me parece que esta qiedando bien 
-*/
 /***************llamado servicio */
 require_once ('clases/consumoApi.class.php');
 /* EJEMPLO PARA EL GET */
