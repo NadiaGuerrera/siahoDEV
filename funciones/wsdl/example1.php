@@ -1,4 +1,5 @@
 <?php
+//esto es un ejepmlo del llamado a un servicio GET
 
 /***************llamado servicio */
 require_once ('clases/consumoApi.class.php');
@@ -23,7 +24,7 @@ $reporte24h= $array;
 //print_r($reporte24h);die;
 /******* */
 
-//print_r($rs);
+print_r($rs);
 
 
 
