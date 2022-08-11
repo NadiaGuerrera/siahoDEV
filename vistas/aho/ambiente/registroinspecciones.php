@@ -8,77 +8,68 @@ include( 'funciones/funcionesGenerales/conecciones/MariaDB/connsisgm.php' );
 $fecha_actual = date( 'd/m/Y' );
 $hereg = date( "h:i:A" );
 
-$color="";
 if ( isset( $_REQUEST[ "bandera" ] ) ) {
   $bandera=$_REQUEST[ "bandera" ];  //Ver Registro
 }
 else{
   $bandera=1;  //Crear Registro
 }
-
 if ( isset( $_REQUEST[ "pagina_usu" ] ) ) {
   $pagina_usu=$_REQUEST[ "pagina_usu" ];  //Ver 
 }
 else{
   $pagina_usu="inicio";  //Crear Registro
 }
-
+$color="";
 $image="public/img/sistema/aspiranteazuloscuro.png";
 include( 'funciones/funcionesGenerales/enlaces.php' );
 
-/*include( 'funciones/funcionesGenerales/cargaFormulario.php' );
-include( 'funciones/funcionesGenerales/cargaUsuario.php' );
-*/
 $colorAlert="background-color:#ee9528d1; border: 2px solid rgba(121, 91, 25, 0.95); font-size:1.1em;border-radius: 10px;color: rgb(16, 14, 14);text-shadow: 0;";
 
 include( 'vistas/layouts/stylesstartRegistro.php' );
 $colorpie="color:#632a00; font-weight: bold;";
-
 ?>
 <div class="container-fluid p-4 pt-0" onLoad="limpiarespacios()">
-  <div class="mb-2">
-    <div class="mt-4" style="font-size: 1.5rem; color:#002c00; font-weight: bold; <?php echo $color; ?>">
+  <div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4" style="font-size: 1.5rem; color:#002c00; font-weight: bold; <?php echo $color; ?>">
     <?php 
         if ( $bandera == 1 ) { ?>
         <img style="position: relative; center: 0px; top: 0px; width: 5%;" src="public/img/sistema/icon/diagnosticoa_verde.png"/>
         &nbsp;
         <?php  echo "Registro de Inspecciones";
-        } else {?>
-          <img style="position: relative; center: 0px; top: 0px; width: 5%;" src=<?php echo $image; ?> />
-          &nbsp;
-          <?php 
-          echo "Registro de Inspecciones";
-        }                   
-      ?>
+        } ?>
     </div>
   </div> 
-  <ol class="breadcrumb mb-12 ms-12">
+  <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="dashboard.php?activo=inicio"  style="color: #ee9528">inicio</a></li>
-    <li class="breadcrumb-item active" style="color: #da9434"><a href="dashboard.php?activo=ambiente" style="color: #ee9528">Ambiente</a></li>
-    <li class="breadcrumb-item active" style="color: #da9434"><a href="dashboard.php?activo=inspeccionesambiente" style="color: #ee9528">Inspecciones</a></li>
-    <li class="breadcrumb-item active" style="color: #632a00"><?php echo $titulo; ?></li>
+    <li class="breadcrumb-item" ><a href="dashboard.php?activo=ambiente" style="color: #ee9528">Ambiente</a></li>
+    <li class="breadcrumb-item" ><a href="dashboard.php?activo=inspeccionesambiente" style="color: #ee9528">Inspecciones</a></li>
+    <li class="breadcrumb-item" style="color: #632a00"><?php echo $titulo; ?></li>
   </ol> 
   <!--<form action="" method="post" name="solicitud" id="form2">  -->
   <form action="" method="post" name="solicitud" id="form2">
     <div class="row">
-      <div class="col-xl-12 mt-2"> 
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2"> 
         <div class="card-header" style="border: 1px solid #d4d3df; color: #549127; border: 1px solid #002c00;">
           <div class="row p-2 pb-0 pt-0">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p-0">
               <b>REGISTRO DE INSPECCIONES</b>
             </div> 
-            <div class="col-xs-12 col-sm-12 col-md-4">
-              <input type="text" id="inspeccion_codigo" name="inspeccion_codigo"  class="form-control" aria-describedby="passwordHelpBlock" style="background:#fff0; border:0px" >
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+              <label class="form-label m-0 p-0 mt-2 pt-1"></label>
+            </div>           
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p-0">
+              <input type="text" id="diagnostico_codigo" name="diagnostico_codigo"  class="form-control" aria-describedby="passwordHelpBlock" style="background:#fff0; border:0px" >
             </div>
           </div>
         </div>        
         <div class="card mb-2" style="border: 1px solid #002c00;">
           <div class="row mb-1 p-3 pt-1 pb-2" style="color: #632a00; ">
-            <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
               <label class="form-label mt-2">Fecha de Inspección</label>
               <input type="date" class="form-control" id="incidencia_fecha" name="incidencia_fecha" aria-describedby="passwordHelpBlock">
             </div>  
-            <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
               <label class="form-label mt-2">Complejo</label>           
                 <select id="incidencia_complejo" name="incidencia_complejo" class="chosen-select" >
                   <?php
@@ -90,7 +81,7 @@ $colorpie="color:#632a00; font-weight: bold;";
                   } ?>
                 </select>                    
             </div>   
-            <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
               <label class="form-label mt-2">Gerencia</label>
               <select  id="incidencia_gerencia" name="incidencia_gerencia" class="chosen-select" onchange="llena_area()" >
                 <?php
@@ -164,11 +155,6 @@ $colorpie="color:#632a00; font-weight: bold;";
                   <table class="inventory2 mt-3 mb-5 pb-1" style="border-collapse: inherit; border:5px double #002c00; " id='tabla_detalle2' >
                     <thead>
                       <tr> 
-                        <input type="hidden" id="indice_hallazgo" class="indice_hallazgo"  >
-                        <input type="hidden" id="indice_recomendacion" class="indice_recomendacion"  >
-                        <input type="hidden" id="indice_responsable" class="indice_responsable"  >
-                        <input type="hidden" id="cantidad_recomendacion" class="cantidad_recomendacion"  >
-                        <input type="hidden" id="cantidad_responsable" class="cantidad_responsable"  >
                         <input type="hidden" name="comselec" id="comselec" />
                         <th style="text-decoration:none;background: #632a00; width:4%; color: #fff" >#</th>
                         <th style="text-decoration:none;background: #632a00; width:96%; color: #fff; font-size: 150%" >HALLAZGOS ANTERIORES</th>
@@ -181,13 +167,13 @@ $colorpie="color:#632a00; font-weight: bold;";
                           # <span style="font-size: 180%; " ></span>
                         </td>        
                         <!-- INICIO DE HALLAZGO POR RECOMENDACIONES   -->
-                        <td colspan=1 style="text-decoration:none; width: 96%;background-color: #8eac971a;">    
+                        <td colspan=1 style="text-decoration:none; width: 96%;background-color: #dfe1e01c;">    
                           <span >
                             <div >
                               <div id="padrerecomenda2"  name="padrerecomenda2" class="padrerecomenda2">    
                                 <div class="row mb-1 p-0" >   
                                   <div class="col-xs-12 col-sm-12 col-md-12 mt-2" >                                      
-                                    <input type="text" style="height: 120%;" name="incidencia_hallazgo" id="incidencia_hallazgo" readonly >
+                                    <input type="text" style="background-color: #cccaca59;border: 3px groove #eeeeeeb0;width: 98%;border-radius: 0.2em;" name="incidencia_hallazgo" id="incidencia_hallazgo" readonly value="Hallazgo Prueba" >
                                   </div>                                
                                 </div>
                                 <!-- INICIO DE DESCRIPCION DE RECOMENDACIONES   -->
@@ -247,6 +233,7 @@ $colorpie="color:#632a00; font-weight: bold;";
             </div>
           </div>
         </div>
+        <!-- INICIO DE DESCRIPCION DE HALLAZGOS NUEVOS   -->
         <div class="card mb-0 mt-2" style="color:black; "> 
           <div class="card-header m-0 p-0" style="background: #8eac971a">  
             <div class="row mb-0 p-0 m-0" style=" border: 1px solid #002c00;border-radius: 0.25rem;">
@@ -278,11 +265,14 @@ $colorpie="color:#632a00; font-weight: bold;";
                               <div id="padrerecomenda"  name="padrerecomenda" class="padrerecomenda">    
                                 <div class="row mb-1 p-0" >   
                                   <div class="col-xs-12 col-sm-12 col-md-12 mt-2" >  
-                                    <select  class="chosen-select" style="width:98%" id="incidencia_hallazgo" name="incidencia_hallazgo" >
+                                    <select  class="chosen-select" style="width:98%;" id="incidencia_hallazgo" name="incidencia_hallazgo" >
                                       <option  value="0">Seleccione Hallazgo 1</option>    
                                       <option  value="1">Seleccione Hallazgo 2</option>                                                                        
                                       </select>
                                   </div>                                
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 mt-2" >  
+                                  <input type="text" style="width:98%;margin-top:1%; border-radius: 4px;border: 1px solid #ccc;"  placeholder="Escriba la Descripción"  name="incidencia_hallazgo_descripcion" id="incidencia_hallazgo_descripcion" >
                                 </div>
                                 <!-- INICIO DE DESCRIPCION DE RECOMENDACIONES   -->
                                 <div style="margin: 1.8%; margin-bottom: 3%; padding:1%; " id="tabla_recomendaciones" name="tabla_recomendaciones" class="tabla_recomendaciones">   
@@ -324,35 +314,35 @@ $colorpie="color:#632a00; font-weight: bold;";
                     </tbody>
                   </table>
                   <a class="agregar" style="text-decoration:none; text-decoration:none;border: 2px solid #138034de; font-size: 150%;font-weight: bold; background:#002c00; color: white">+</a> 
-                </article>             
-              </div>
+                </article>                
+                <div style="border: 2px solid #002c004f;;border-radius: 0.25rem;margin: 0%;width: 98%;margin-left: 2%; margin-bottom: 3%;padding: 0">
+                  <div class="card-header" style="color: #fff;font-size: 0.8em;background-color: #76975e8c;padding: 0"><b>&nbsp;ADJUNTAR SOPORTES</b></div>
+                    <div class="row mb-0 p-0 m-0 pt-0 pb-1">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-0" class="text-center" style="padding-top:0.5%; padding-bottom: 1%">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+                        <input name="archivo" id="archivo" type="file" class="form-control" style="font-size:0.8em; margin-top:1%; margin-bottom: 1.5%" />
+                      </div>                                    
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>            
+          </div>          
+        </div>
+        <div class="card mb-0 mt-2 mb-4">
+          <?php if ($bandera==1){  //  ES UN REGISTRO NUEVO   ?>
+          <div class="row mt-4 text-center m-0 p-0 mb-2 mb-5">
+            <div class="col-xl-2"> </div>         
+            <div class="col-xl-4 ">
+              <button type="button" class="btn mb-2"  onclick="guardarinspeccionAHO_inspeccion();" style="min-width: 100%; width: 100%;  max-width: 100%; background-color: #632a00; color: white"> <i class="fa fa-fast-forward"></i>&nbsp;&nbsp;Registrar</button>
             </div>
+            <div class="col-xl-4"> <a rel="tooltip"  title=" Cancelar " id="Cancelar"  href="dashboard.php?activo=inspeccionesambiente" class="btn" style="min-width: 100%; width: 100%;  max-width: 100%; background-color: #632a00; color: white"> <i class="fa fa-undo"></i> Cancelar </a> </div>
+            <div class="col-xl-2"> </div>
           </div>
-        </div>
-        <div class="card mb-0 mt-2">
-        <div class="card-header" style="color: #549127; "> <b>&nbsp;ADJUNTAR SOPORTES </b></div>
-          <div class="row mb-0 p-0 m-0 pt-0 pb-1">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-0" class="text-center" 
-              style=" padding-top:0.5%; padding-bottom: 1%">
-              <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
-              <input name="archivo" id="archivo" type="file" class="form-control" style="font-size:0.8em; margin-top:1%; margin-bottom: 1.5%" />
-            </div>                                    
-          </div>
-        </div>
-        <?php if ($bandera==1){  //  ES UN REGISTRO NUEVO   ?>
-        <div class="row mt-4 text-center m-0 p-0 mb-2 mb-5">
-          <div class="col-xl-2"> </div>         
-          <div class="col-xl-4 ">
-            <button type="button" class="btn mb-2"  onclick="guardarinspeccionAHO_inspeccion();" style="min-width: 100%; width: 100%;  max-width: 100%; background-color: #632a00; color: white"> <i class="fa fa-fast-forward"></i>&nbsp;&nbsp;Registrar</button>
-          </div>
-          <div class="col-xl-4"> <a rel="tooltip"  title=" Cancelar " id="Cancelar"  href="dashboard.php?activo=inspeccionesambiente" class="btn" style="min-width: 100%; width: 100%;  max-width: 100%; background-color: #632a00; color: white"> <i class="fa fa-undo"></i> Cancelar </a> </div>
-          <div class="col-xl-2"> </div>
-        </div>
-        <?php } ?>
-        <?php 
-        if ($bandera==2){ 
-          include( 'funciones/enlacesRegistro.php' );                  
-          //  VISUALIZAR REGISTRO   ?>
+          <?php }
+          if ($bandera==2){ 
+            include( 'funciones/enlacesRegistro.php' );                  
+            //  VISUALIZAR REGISTRO   ?>
           <div class="row mt-4 text-center m-0 p-0 mb-2">
             <div class="col-xl-1"> </div>
             <div class="col-xl-3 ">       </div>
@@ -361,7 +351,8 @@ $colorpie="color:#632a00; font-weight: bold;";
             </div>
             <div class="col-xl-2"> </div>
           </div>
-        <?php } ?>
+          <?php } ?>
+        </div>
       </div>
     </div>
   </form>

@@ -4,8 +4,8 @@
 <div class="container-fluid" >
     <h1 class="mt-1"> </h1>
     <div class="card mb-0" >
-        <div class="card-body fondoPrincipal mt-5 ">
-            <div class="card-header " style="font-size: calc(0.2em + 1vw);font-family:arial;margin:0; text-align: center; padding: 5px 2px 5px 2px; /* font-weight:bold*/">
+        <div class="card-body fondoPrincipal ">
+            <div class="card-header mt-0 mb-0 pt-3 pb-3 " style="font-size: calc(0.2em + 1vw);font-family:arial;margin:0; text-align: center; padding: 5px 2px 5px 2px; /* font-weight:bold*/">
                 <a href="dashboard.php?activo=ambiente" >
                     <h4 style="color: #186a0c"> <b>Inspecciones &nbsp;Ambientales</b> </h4>
                 </a> 
