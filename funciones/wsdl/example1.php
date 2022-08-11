@@ -1,5 +1,5 @@
 <?php
-//esto es un ejepmlo del llamado a un servicio GET
+//esto es un ejepmlo del llamado a un servicio GET jsantana
 
 /***************llamado servicio */
 require_once ('clases/consumoApi.class.php');
