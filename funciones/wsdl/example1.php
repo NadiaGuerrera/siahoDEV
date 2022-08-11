@@ -1,5 +1,5 @@
 <?php
-//esto es un ejepmlo del llamado a un erfgergrfsdfgsdfETKJGKJG KGJ
+//esto es un ejepmlo del llamado a un bmerchan
 
 /***************llamado servicio */
 require_once ('clases/consumoApi.class.php');
