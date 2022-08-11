@@ -1,5 +1,5 @@
 <?php
-//esto es un ejepmlo del llamado a un servicio GETKJGKJG KGJ
+//esto es un ejepmlo del llamado a un erfgergrfsdfgsdfETKJGKJG KGJ
 
 /***************llamado servicio */
 require_once ('clases/consumoApi.class.php');
