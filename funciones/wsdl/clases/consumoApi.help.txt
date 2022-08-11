@@ -1,7 +1,7 @@
 API REST - PHP
 Clase para consumir API Rest en PHP
 
-Métodos HTTP soportados - GET - POST - DELETE - PUT - PATCH
+Métodos HTTP soportados - GET - POST - DELETE - PUT 
 
 Extras - Conversor JSON a ARRAY - Metodo de autentificación básica
 ************************
@@ -31,7 +31,7 @@ $rs 	= API::GET($URL.'proyectos/1',$token);
 $array  = API::JSON_TO_ARRAY($rs);
 
 
-Metodo POST
+Metodo POST  //insertar
 $parametros = array(
 	'proyecto' 	=> 'prueba1',
 	'codigo'	=> 'codigo1',

@@ -11,7 +11,7 @@ $URL	= 'http://localhost/siaho/funciones/wsdl/empleados?NumPersonal=13336768';
 $rs 	= API::GET($URL,$token);
 $array  = API::JSON_TO_ARRAY($rs);
 $user = $array;
-$reporte24h= $user;
+print_r($array);die;
 
 $preCargaComplejo_id=$user[0]['complejoId'];
 
@@ -21,10 +21,16 @@ $URL	= "http://localhost/siaho/funciones/wsdl/r24h?preCargaComplejo_id=$preCarga
 $rs 	= API::GET($URL,$token);
 $array  = API::JSON_TO_ARRAY($rs);
 $reporte24h= $array;
-//print_r($reporte24h);die;
+print_r($reporte24h);die;
+
+
+
 /******* */
 
-print_r($rs);
+
+
+
+
 
 
 
