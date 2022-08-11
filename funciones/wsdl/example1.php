@@ -1,6 +1,6 @@
 <?php
 
-//esto es un ejepmlo del llamado a un bmerchan jsantana
+//esto es un ejepmlo del llamado a un bmerchan jsantana y belkis
 
 
 /***************llamado servicio */
